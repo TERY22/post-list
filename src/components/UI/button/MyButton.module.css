@@ -14,12 +14,12 @@
 	color: #fff;
 }
 
-.danger {
+.myBtn.danger {
 	color: #dc3545;
 	border-color: #dc3545;
 }
 
-.danger:hover {
+.myBtn.danger:hover {
 	background: #dc3545;
 	color: #fff;
 }

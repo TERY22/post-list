@@ -11,7 +11,7 @@ const Post = ({ post, number, remove }) => {
         <div className='post__body'>{post.body}</div>
       </div>
       <div className='post__btns'>
-        <MyButton className='danger' onClick={() => remove(post)}>
+        <MyButton type='danger' onClick={() => remove(post)}>
           Delete
         </MyButton>
       </div>

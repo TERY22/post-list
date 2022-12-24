@@ -2,9 +2,11 @@ import { useMemo, useState } from 'react';
 
 import PostList from './components/PostList/PostList';
 import PostForm from './components/PostForm/PostForm';
+import PostFilter from './components/PostFilter/PostFilter';
+import MyModal from './components/UI/modal/MyModal';
+import MyButton from './components/UI/button/MyButton';
 
 import './styles/App.css';
-import PostFilter from './components/PostFilter/PostFilter';
 
 function App() {
   const [posts, setPosts] = useState([
@@ -18,6 +20,7 @@ function App() {
     { id: 8, title: 'Ruby', body: 'kjafhnjfasalsnflak' },
   ]);
   const [filter, setFilter] = useState({ sort: '', query: '' });
+  const [modal, setModal] = useState(false);
 
   const sortedPosts = useMemo(() => {
     if (filter.sort) {
@@ -36,6 +39,7 @@ function App() {
 
   const createPost = (newPost) => {
     setPosts([...posts, newPost]);
+    setModal(false);
   };
 
   const removePost = (post) => {
@@ -44,10 +48,14 @@ function App() {
 
   return (
     <div className='App'>
-      <PostForm create={createPost} />
-      <hr style={{ margin: '15px 0' }} />
-      <PostFilter filter={filter} setFilter={setFilter} />
+      <MyModal visible={modal} setVisible={setModal}>
+        <PostForm create={createPost} />
+      </MyModal>
 
+      <PostFilter filter={filter} setFilter={setFilter} />
+      <MyButton style={{ marginTop: '20px' }} onClick={() => setModal(true)}>
+        Create post
+      </MyButton>
       <PostList
         remove={removePost}
         posts={sortedAndSearchedPosts}
