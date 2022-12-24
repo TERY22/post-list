@@ -1,0 +1,25 @@
+.myBtn {
+	padding: 5px 15px;
+	color: teal;
+	font-size: 14px;
+	background: transparent;
+	border: 1px solid teal;
+	cursor: pointer;
+	transition: .3s ease-in-out;
+	border-radius: 12px;
+}
+
+.myBtn:hover {
+	background: teal;
+	color: #fff;
+}
+
+.danger {
+	color: #dc3545;
+	border-color: #dc3545;
+}
+
+.danger:hover {
+	background: #dc3545;
+	color: #fff;
+}
