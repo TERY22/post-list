@@ -1,0 +1,26 @@
+.pageWrapper {
+	margin: 15px 0;
+	display: flex;
+	width: 100%;
+	justify-content: center;
+	gap: 10px;
+}
+
+.page {
+	padding: 10px;
+	border: 1px solid teal;
+	cursor: pointer;
+	border-radius: 12px;
+	transition: .3s ease-in-out;
+}
+
+.page:hover {
+	background-color: teal;
+	color: #fff;
+}
+
+.pageCurrent {
+	background-color: teal;
+	color: #fff;
+	transform: scale(1.1);
+}
